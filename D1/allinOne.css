@@ -24,3 +24,7 @@ th{
 tr:nth-child(odd){
     background-color: pink;
 }
+
+ol>li:nth-child(even){
+    color:red
+}
