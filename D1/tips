@@ -1,0 +1,332 @@
+meta charset = utf-8 - encoding format 
+
+Tags : - usually has start and closing tags - except few - meta,link
+
+-<p> - Block level elements - this will block the entire block 
+block level elements occupy entire content width of their parent eg:<body> [however height is only the height of text/image/content]
+-<h1> - <h6>  - All heading tags are block level tags 
+-title tag [inbody] - It appears when we hoover over the element 
+
+-self closing tags :- 
+=====================
+<hr> - <hr/> - Horizontal rule
+<br> - <br/> - Line breaking
+===================
+<pre> - used when you have multiple lines - It preserves the spaces that you given in HTML
+<pre>
+    Name:dsdsds
+    Age:23
+    Role:QA
+</pre>
+
+[in CSS - pre {font-family:inherit}]
+
+inline tags - 
+==============
+when two imgs /two links added they appear next to each other in the HTML file
+
+ -Inline Tags:
+ ===============
+-img-src-alt [self closing tag] - Not block level elemnts [only occupies the width required]
+<img src="C:////"/>
+alt -when the image is not found on src alt is displayed /for screen readers
+search over engine
+
+when height of the image is changed - automatically width is also adjusted 
+when width of the image is changed - automatically height is also adjusted 
+So best practice is to manage only one like above [bcoz rest is automatically managed]
+
+--Links [inline tags]
+=====================
+-Link to page 
+<a href = "www.google.com">Link Text</a>
+
+-Link to section of page:-
+<a herf ="wewewew.com" #referedSecion>link text</a> - when you want the page navigate
+to the specific section of the page.
+
+- Link to another page in the new tab :-
+
+<a href = "www.google.com" target ="_blank">Link Text</a> - This will navigate the page using new tab 
+
+link has states - visited/active/hoover
+
+use CSS you can style links { a{colour}}
+in CSS- to define property for class you use . for sudo classes :
+states are styled using sudo classes 
+a:visited{
+ colour :red 
+ font-size: 2em [2 times the original/usual size]
+}
+a:hoover
+a:active 
+
+view port - particular area where the content is displayed 
+
+margin
+border -outer area [solid,dashed]
+padding - space between text and outer area [top,bottom,left,right]
+content area
+height - By default content height [if it has one line - 1 line height]
+            content height [if it has two line - 2 line height]
+
+Attributes of an element - 
+id - unique identifier
+class - used when you want to group set of elements to a particular class 
+CSS - picks out all elements beloging to .CLASSNAME and then { give all the style declarations in key value pairs}
+font-weight - CSS property that controls the boldness of the element 
+
+-Represent data in tabular format  - table tags
+-----------------------------------------------
+
+<table>
+<thead> -optional
+<tr> -column names
+<tbody>=optional
+<td> - table data
+
+<Caption> tag table detail [centered]
+
+--to give properties for many html elements together
+table,th,td{
+    border:1px solid crimpson red
+    border-collapse:collapse - this will collapse the border of the cells to one usually when you give border it will come as 2 lines border for each cell
+}
+
+To make every alternate row in a table to different colour 
+-------------------------------------------------------------
+Zebra Striping --
+
+tr:nth-child(odd) {
+    background-color :light blue 
+}
+
+tr:nth-child(even) {
+    background-color :light blue 
+}
+
+Merge cells / span to display 2 email ids of one person 
+rowspan="2"
+colspan="2"
+
+--Lists
+---------------------------------
+1. order List
+2. un ordered List 
+
+Block level elements
+<ul> - un ordered list 
+<li> - list item 
+style - ul{list-style-type:circle} //Also take value of none
+
+<ol> -  ordered list 
+<li>
+style - ol{list-syle-type:lower-alpha}
+
+
+li with in ol 
+ol > li : nth-child(odd){
+    color:red
+}
+
+Forms : - 
+
+<form> - can be done using form 
+<form action ="form.html"> - in action you can mention requesting form here it is same form being requested 
+<form action ="form.html" method="post"> - when ever you have password in the form use this to encrypt the password text on browser
+<input> - a tag for a text box
+all <input> should be under <label> and lable had for attribute - for screen readers
+<lable for ="nameid>Name <label>
+<input type="text" id="nameid"/>
+if the data from input element has to go out from form to server then you should use name attribute
+All input tags has value attribute to display a default text on browser
+<input type="text" id="nameid" name="name" value ="Swaroop Sai"/>
+<input type="text" id="nameid" name="name"/>
+
+<input type ="submit" value ="sign me up"/>
+<label for="comments">Comments</label>
+<textarea id = "comments" name="comments></textaarea>
+
+All select has selected attribute for default selection 
+
+<label for="cities">city</label>
+        <select name="cities" id="cities">
+            <option value="">NY</option>
+            <option value="" selected>PA</option>
+        </select>
+
+For adding a multi select box, give multiple ="multiple" - Multi Select box 
+<label for="cities">city</label>
+        <select name="cities" id="cities" multiple="multiple">
+            <option >NY</option>
+            <option selected>PA</option>
+        </select>
+
+        when the form is submitted - NY will go out but if you specicy value 
+        <option value="somevalue">NY</option>
+        when the form is submitted instead of NY - somevalue (from value) will go out 
+
+  Check box - [it is multi select]
+  --------------
+  For check box and radio button the labels are little different - this enables the 
+  user to select a check box by clicking on text or the check box  
+
+   <label><input type ="checkbox"/> Web development</label>
+
+   To group check boxes - we have to use the same name attributes 
+   Values is must for check boxes
+   <label><input type ="checkbox" name ="courses2" value = "web development"/> Web development</label>
+   <label><input type ="checkbox" name ="courses2" value = "web /> Web</label>
+   <label><input type ="checkbox" name ="courses2" value = "development"/> Web Development</label>
+
+   values goes while submitting the form 
+
+    Radio - [single select every thing else is same except the type ="radio"]
+    -------------------
+<label><input type ="radio" name ="courses" value = "web development"/> Web development</label>
+   <label><input type ="radio" name ="courses" value = "web /> Web</label>
+   <label><input type ="checkradiobox" name ="courses" value = "development"/> Web Development</label>
+
+How to reset the form 
+-----------------
+<input type ="reset" value ="Reset the form"/>
+
+div and span are container tags 
+---------------
+div - divison - block level tags
+div is a block level continer tag 
+
+css - propery float left - will keep the text or links left and 
+for block level elements we can even control the width by CSS 
+- div used to logical grouping of elements - Like all elements linked in div 
+Like all paragraphs can be grouped under a div tag 
+
+.parent > child {
+    colour:gray
+}
+
+To bring all the links one after the other - by default anchor tags are inline 
+
+link 1  link2 link3 link4 
+
+.sidebar > a {
+    display:block
+}
+
+Now the diplay will be 
+
+link 1
+link2
+link3 
+
+<span> is an inline container 
+used to - eg: in a paragraph you want to bold only some text
+<span class="bold"> Swaroop</span> other text appear next to it 
+.bold{
+    font-weight:bold
+}
+span can also hold links - group other inline elements - Group elements but have them inline then use span 
+
+iframe -
+-----------
+
+if you want to embed other page inside you page 
+like if you want to embed edureka page inside your web page -
+however amazon or big sites does not allow their page to be as an iframe on our webside due to 
+security threat 
+Also iframes help you to display pdf as page in the browser 
+<iframe src ="mypdf.pdf"/>
+
+character entities and symbols 
+
+this is guide to <p> tag - here browser misunderstnad <p> as a start tag and add </p> after th g.
+to avoid this confusion use &lt;p&gt; - lessthan and greatthan 
+
+&copy;
+&apos;
+&amp;
+
+
+CSS - 
+-Embeded CSS - it is part of HTML file 
+-InLine CSS 
+Every element has style attribute we can provide it in line 
+Eg:- <a href = "www.google.com" style ="text-decoration:none;" target ="_blank">Link Text</a>
+-Extenal CSS [preferable - can be re used ]
+you have a seperate CSS file and you link it in the html using link tag in html 
+<link rel ="stylesheet" href="relativepath">
+
+protocol - how client and server communicates eg: file// , http[80],https[443]
+URL - Host+path+queryString
+eg: www.amazon.com/gohere?name=hi 
+encode + ->%20
+Hash fragment - to specific part of a page 
+semantic tags :- block level tags - does not add any presentation on HTML page 
+header/footer/section/article/aside,figure and figcaption 
+
+header - used for search engines for indexing/make sense for developers
+footer - copy write info
+article - to enclose independet piece of content and the dependent piece go in section eg: recipe 
+section -dependent piece of aricle goes here - eg: ingredients 
+if you have an image and you want to add a caption to it you can use it[ you can add span or div as well]
+
+<figure>
+<img src ="dfdfd.jpg" alt="msg"/>
+<figcaption> adadada</figcaption>
+</figure>
+
+<datalist> similar to select - diff - select restrict to only those elements where as
+in datalist you can use free text as well
+ <label for="cities-box">Select city</label>
+        <input list="cities" id="cities-box"/>
+        <datalist id="cities">
+            <option>Newyort</option>
+            <option>San Jose</option>
+            <option>Chicago</option>
+        </datalist>
+
+ Input types:-
+ ----------
+ text,password,text-area,select,radiobutton,checkbox,number,date,datetime,email,utl,tel,range,search
+ attributes:  name,value,placeholder[this is hint to user what to enter],required,autocomplete
+ autofocus,formnovalidate
+ number,date -max and min,step [0.5 etc]
+ rating-min,max
+ search input will have a x mark next to text box 
+ required attribute throws errors when u submit a form 
+ autocomplete -on - will hint for autocomplete if u once submit the form and helps the next time keep the entire text 
+ autofocus- keeps the focus at that point when the page is loaded [usually sets up on one element on form]
+formnovalidate [skips validations on form] when added to submit button, user can submit a form with out doing ny validations 
+required & formnovalidate are just keys with no value 
+
+File upload - input type = file
+
+<input type="file" name="resume"> - when you submit form with post method, only the file name
+will go to server - if u want to send the content/attachment as well 
+use this [enctype] <form enctype="multipart/form-data" action=""></form>
+use this [multiple] <form enctype="multipart/form-data" action="" multiple></form> - to allow upload of multiple files 
+
+Audio & video-
+types - mime types to recognise format
+we can use same files with different format as backup as some browsers understand mp3,ogg,vlc etc 
+audio -  controls,loop,autoplay 
+
+Local and Session storage:-
+---------------------------
+every browser give some space to a particular website to store some info 
+These are 2 storage options 
+browser uses some part of our RAM to store and can be retriewed by local and session storage
+each domain will get some local storage 
+
+Persistent:- [long term -permanent -lasts across sessions]
+localstorage.setItem("key","value")
+localstorage.getItem(key)
+localstorage.removeItem
+
+Per Session - [short time] [will loose/be cleared once session is ended]
+sessionstorage.setItem 
+sessionstorage.getItem 
+sessionstorage.removeItem 
+
+For server - use http-server [apache tomcat,iis,ngnix]
+server has ears - port is one ear 
